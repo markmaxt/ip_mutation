@@ -6,11 +6,10 @@
 A switch which realizes ip mutation to protect the internal node
 
 For each switch:
-1) When get a DNS query for internal node from any external node, response with a random virtual ip address.
-2) When get an arp request for internal node from any external node, change the destination ip to the real ip of internal node and forward the request to the internal node.
-3) When get an arp reply from internal node, change the source real ip into the virtual ip and forward the reply to the related destination external node.
-4) When get an icmp request from external node, install an entry into the switch to change the destination ip to real ip of the internal node, set the destination mac address and switch port related to the internal node.
-5) When get an icmp reply from internal node, install an entry into the switch to change the srcip into virtual ip of the internal node, set the mac addr and switch port for the destinated external node.
+1) When get an arp request for internal node from any external node, change the destination ip to the real ip of internal node and forward the request to the internal node.
+2) When get an arp reply from internal node, change the source real ip into the virtual ip and forward the reply to the related destination external node.
+3) When get an icmp request from external node, install an entry into the switch to change the destination ip to real ip of the internal node, set the destination mac address and switch port related to the internal node.
+4) When get an icmp reply from internal node, install an entry into the switch to change the srcip into virtual ip of the internal node, set the mac addr and switch port for the destinated external node.
 """
 
 from pox.core import core
